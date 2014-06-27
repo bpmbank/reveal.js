@@ -185,11 +185,12 @@ function handledown(){
 			//console.log(good,davg)
 			if(dx<-movethresh&&dirx){
 				//console.log('right')
-				Reveal.navigateRight()
-			}
+				//reverse mode Reveal.navigateRight()
+			          Reveal.navigateLeft()
+                        }
 			else if(dx>movethresh&&dirx){
 				//console.log('left')
-				Reveal.navigateLeft()
+				Reveal.navigateRight()
 			}
 			if(dy>movethresh&&!dirx){
 				if(davg>overthresh){
@@ -198,7 +199,7 @@ function handledown(){
 				}
 				else{
 					//console.log('up')
-					Reveal.navigateUp()
+					Reveal.navigateDown()
 				}
 			}
 			else if(dy<-movethresh&&!dirx){
@@ -208,7 +209,7 @@ function handledown(){
 				}
 				else{
 					//console.log('down')
-					Reveal.navigateDown()
+					Reveal.navigateUp()
 				}
 			}
 			state=2
